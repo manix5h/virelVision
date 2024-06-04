@@ -11,10 +11,10 @@ export function Home(){
 
            
 
-           <div className=" flex justify-center w-full h-full  items-center md:p-8 ml-6  md:pl-24  ">
+           <div className=" flex justify-center w-full h-full  items-center md:p-8   md:pl-24  ">
 
 
-               <div className=" text-xl  text-wrap shadow-sm ">
+               <div className=" text-xl  text-wrap shadow-sm m-3 pl-3">
                 <h1 className="text-5xl font-bold "> Welcome to <span className="text-deep-purple-600"> Virel Vision</span></h1>
                  <p className="  text-gray-400 text-pretty leading-relaxed pt-5"> your ultimate destination for superior social media management services.
                   Our agency specializes in helping creators, business professionals,
