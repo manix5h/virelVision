@@ -4,6 +4,10 @@ import { IoMdClose } from "react-icons/io";
 import logo from "../assets/logo.png"
 import { useState } from "react";
 
+//@ts-ignore
+import ProgressBar from "react-scroll-progress-bar";
+
+
 
 export function Navbar() {
   const [open, setOpen] = useState(false)
@@ -11,8 +15,10 @@ export function Navbar() {
  
 
   return (
-    <div className=" flex justify-between   m-4">
-      <div className="text-3xl   justify-center w-24 h-8  ml-9 cursor-pointer md:pt-4">
+    <div className=" flex justify-between  p-3 md:m-5">
+       <ProgressBar height="6" bgcolor="#373A40" duration="0.2" />
+    
+      <div className="text-3xl   justify-center w-24 h-8  ml-7 cursor-pointer md:pt-2">
         <img src={logo} alt="" />
        
       </div>
@@ -20,13 +26,13 @@ export function Navbar() {
       <div onClick={()=>{setOpen(!open)}} >
       
      
-      {open?<IoMdClose className="absolute h-14 w-9 right-1 md:hidden top-9 cursor-pointer"/>:<IoMdMenu className="absolute h-14 w-9 right-1 md:hidden top-9 cursor-pointer" />}
+      {open?<IoMdClose className="absolute h-14 w-9 right-1 md:hidden top-6 cursor-pointer"/>:<IoMdMenu className="absolute h-14 w-9 right-1 md:hidden top-6 cursor-pointer" />}
       </div>
 
       <div className=
       {`md:flex md:gap-8 md:pt-7 
       
-      absolute bg-white md:static md:items-center top-28 space-y-6 md:space-y-0 w-full md:w-auto lg:pr-60 pl-5 transition-all duration-300 ease-in md:pl-0  gap-7 md 
+      absolute bg-white md:static md:items-center lg:justify-center top-28 p-4 space-y-6 md:space-y-0 w-full md:w-auto lg:pr-60 pl-5 transition-all duration-500 ease-in md:pl-0  gap-7 md 
       ${open?"top-20 opacity-100":"top-[-490px]"}  `}>
         <div className="text-xl">
           <Link
@@ -38,7 +44,20 @@ export function Navbar() {
             duration={900}
             className="cursor-pointer hover:text-deep-purple-700 duration-150 "
           >
-            Home
+            HOME
+          </Link>
+        </div>
+        <div className="text-xl">
+          <Link
+            activeClass="active"
+            to="services"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={900}
+            className="cursor-pointer hover:text-deep-purple-700 duration-150"
+          >
+            SERVICES
           </Link>
         </div>
 
@@ -52,23 +71,11 @@ export function Navbar() {
             duration={900}
             className="cursor-pointer hover:text-deep-purple-700 duration-150 mt-10"
           >
-            Clients
+            CLIENTS
           </Link>
         </div>
         
-        <div className="text-xl">
-          <Link
-            activeClass="active"
-            to="services"
-            spy={true}
-            smooth={true}
-            offset={50}
-            duration={900}
-            className="cursor-pointer hover:text-deep-purple-700 duration-150"
-          >
-            Services
-          </Link>
-        </div>
+       
         <div className="text-xl">
           <Link
             activeClass="active"
@@ -79,7 +86,7 @@ export function Navbar() {
             duration={900}
             className="cursor-pointer hover:text-deep-purple-700 duration-150"
           >
-            About Us
+            ABOUT US
           </Link>
         </div>
       </div>
@@ -94,7 +101,7 @@ export function Navbar() {
             duration={900}
             className="text-white cursor-pointer bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
           >
-            Contact Us
+           CONTACT US
           </Link>
       </div>
     </div>

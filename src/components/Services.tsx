@@ -1,52 +1,76 @@
-import s1 from "../assets/s1.webp";
-import s2 from "../assets/s2.webp";
-import s3 from "../assets/s3.webp";
+import { data } from "./Data";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
+
 
 export function Services() {
+
+  useEffect(()=>{
+    AOS.init({
+      offset: 200,
+      duration: 700,
+      easing: 'ease',
+      delay: 20,
+      once:false,
+      
+    });
+  },[])
   return (
-    <div id="services" className="h-fit">
-      <div className="flex justify-center pt-10">
-        <h1 className="text-4xl ">OUR SERVICES</h1>
+    <div  id="services" className="h-fit">
+      <div data-aos="fade-right"  className="flex justify-center pt-10">
+        <h1 className="text-4xl p-5">OUR SERVICES</h1>
       </div>
 
-      <div className="flex justify-center ml-10">
-        <div className=" grid grid-cols-1 md:space-x-5 space-y-3 sm:grid-cols-3 ">
+      <div className="flex justify-center ">
+        <div className=" grid grid-cols-1 md:space-x-5 space-y-3 md:grid-cols-3 ">
+          <ServiceCard
+            heading={data.s1.heading}
+            paragraph={data.s1.paragraph}
+            image={data.s1.image}
+          />
+          <ServiceCard
+            heading={data.s2.heading}
+            paragraph={data.s2.paragraph}
+            image={data.s2.image}
+          />
+          <ServiceCard
+            heading={data.s3.heading}
+            paragraph={data.s3.paragraph}
+            image={data.s3.image}
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+interface ServiceCard {
+  heading: string;
+  paragraph: string;
+  image: string;
+}
+
+function ServiceCard({ heading, paragraph, image }: ServiceCard) {
+  return (
+    <div data-aos="fade-right">
+      <div className="flex justify-center">
+        <div className="p-4  ">
+          <img
+            src={image}
+            alt=""
+            className="rounded-md shadow-xl m-3 mx-auto "
+          />
           <div className="flex justify-center">
-            <div className="p-4 mt-4 ml-5">
-              <img src={s1} alt="" className="rounded-md shadow-xl p-2"/>
-             <div className="m-2">
-             <h1 className="text-3xl m-3">STRATEGY SESSION</h1>
-              <p className="m-3 text text-gray-500  text-wrap leading-relaxed text-xl">
-                Let us guide you through the intricacies of social media for
-                your business. Sign up for a detailed session on the essentials
-                of effective social media marketing.
+            <div className="m-4 w-3/4 ">
+              <h1 className="text-2xl text-center mx-auto "> {heading} </h1>
+              <p className="mx-auto text text-gray-500 text-center  text-wrap leading-relaxed text-xl">
+                {paragraph}
               </p>
-             </div>
             </div>
-          </div>
-
-          <div className="p-4">
-            <img src={s2} alt=""  className="rounded-md shadow-xl p-2" />
-            <h1 className="text-3xl m-3">EXPERT ADVICE</h1>
-            <p className="m-3 flex-wrap text-gray-500  text-wrap leading-relaxed text-xl">
-              Enhance your team's social media skills with personalized
-              consultations. We focus on your unique needs to boost your
-              in-house expertise significantly.
-            </p>
-          </div>
-
-          <div className="p-4">
-            <img src={s3} alt=""  className="rounded-md shadow-xl p-2"/>
-            <h1 className="text-3xl m-3">CUSTOMIZED MANAGEMENT</h1>
-            <p className="m-3 flex-wrap text-gray-500  text-wrap leading-relaxed text-xl">
-              Identify the right platforms, content strategies, and tone for
-              your brand. By understanding your brand identity, we can refine
-              your social media approach for optimal results.
-            </p>
           </div>
         </div>
       </div>
-      
     </div>
   );
 }

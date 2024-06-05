@@ -1,7 +1,22 @@
 import axios from "axios";
-import { useState } from "react";
+
+import { useEffect, useState } from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export const ContactUs = () => {
+
+    useEffect(()=>{
+        AOS.init({
+            offset: 200,
+            duration: 700,
+            easing: 'ease',
+            delay: 20,
+            once:false
+        });
+      },[])
+
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -43,19 +58,20 @@ export const ContactUs = () => {
     }
   };
   return (
-    <form  className="bg-white dark:bg-gray-900 pl-5 md:pl-1  justify-center" id="contactus">
+    <form data-aos="fade-right"
+     className="bg-white dark:bg-gray-900 pl-5 md:pl-1  justify-center" id="contactus">
       <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
-        <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">
+        <h2 data-aos="fade-right" className="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">
           Contact Us
         </h2>
-        <p className="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">
+        <p data-aos="fade-right" className="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">
           Got a technical issue? Want to send feedback about a beta feature?
           Need details about our Business plan? Let us know.
         </p>
         <form action="#" className="space-y-8">
-          <div>
+          <div data-aos="fade-right">
             <label
-              htmlFor="email"
+              htmlFor="email" data-aos="fade-right"
               className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
             >
               Your Name
@@ -72,7 +88,7 @@ export const ContactUs = () => {
               required
             />
           </div>
-          <div>
+          <div data-aos="fade-right">
             <label
               htmlFor="subject"
               className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
@@ -90,8 +106,8 @@ export const ContactUs = () => {
               placeholder="Let us know how we can help you"
               required
             />
-          </div>
-          <div className="sm:col-span-2">
+          </div >
+          <div data-aos="fade-right" className="sm:col-span-2">
             <label
               htmlFor="message"
               className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
@@ -109,6 +125,7 @@ export const ContactUs = () => {
             ></textarea>
           </div>
           <button
+          data-aos="fade-right"
           onClick={handleSubmit}
             type="button"
             className="text-white w-44 bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"

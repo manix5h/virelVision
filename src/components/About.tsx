@@ -3,28 +3,40 @@ import p2 from "../assets/02.jpg"
 import p3 from "../assets/03.jpg"
 import p4 from "../assets/04.jpg"
 import p5 from "../assets/05.jpg"
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
 
 export function About(){
+  useEffect(()=>{
+    AOS.init({
+      offset: 200,
+      duration: 700,
+      easing: 'ease',
+      delay: 20,
+      once:false
+    });
+  },[])
     return (
-      <div id="about">
-        <div className="flex p-4 justify-center md:justify-start">
-          <h1 className="text-4xl pl-4">CONNECT WITH US</h1>
+      <div  id="about w-fit">
+        <div data-aos="fade-right" className="flex p-4 justify-center m-3 ">
+          <h1 className="text-3xl  pl-4">CONNECT WITH US</h1>
         </div>
 
-        <div className="flex  w-full  p-4 justify-around">
-          <img src={p1} alt="" className="w-1/6 p-3 shadow-lg rounded-md " />
-          <img src={p2} alt="" className="w-1/6 p-3 shadow-lg rounded-md" />
-          <img src={p3} alt="" className="w-1/6 p-3 shadow-lg rounded-md" />
-          <img src={p4} alt="" className="w-1/6 p-3 shadow-lg rounded-md" />
-          <img src={p5} alt="" className="w-1/6 p-3 shadow-lg rounded-md" />
+        <div className="flex  w-full  p-4 justify-around mt-8">
+          <img data-aos="fade-right" src={p1} alt="" className="w-1/6 p-3 shadow-lg rounded-md " />
+          <img data-aos="fade-right" src={p2} alt="" className="w-1/6 p-3 shadow-lg rounded-md" />
+          <img data-aos="fade-right" src={p3} alt="" className="w-1/6 p-3 shadow-lg rounded-md" />
+          <img data-aos="fade-right" src={p4} alt="" className="w-1/6 p-3 shadow-lg rounded-md" />
+          <img data-aos="fade-right" src={p5} alt="" className="w-1/6 p-3 shadow-lg rounded-md" />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2">
-          <div className="m-8 text-3xl text-gray-700 text-center md:text-start">
-            VIREL VISION
+          <div data-aos="fade-right" className="mt-3 md:m-5 text-3xl text-gray-700 text-center md:text-start">
+            <h2 className="m-3">VIREL VISION</h2>
           </div>
 
-          <div className="flex justify-center text-center md:text-start md:justify-end m-10 p-5">
+          <div data-aos="fade-left" className="flex justify-center text-center md:text-start md:justify-end md:m-10 p-5">
             <div className=" ">
               <div className="">
                 <div className="">
