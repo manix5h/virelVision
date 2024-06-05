@@ -1,5 +1,5 @@
 import { Navbar } from "./Navbar";
-import divesh from "../assets/diveshfinal.png";
+import divesh from "../assets/diveshfinal-min.png";
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
