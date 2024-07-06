@@ -9,6 +9,7 @@ import { Footer } from './components/Footer'
 
 import { Home } from './components/Home'
 
+
 import { Services } from './components/Services'
 
 
@@ -18,17 +19,22 @@ function App() {
   return (
     <>
       
-      <Home/>
+      <Home  />
       
      
       <Services/>
       <Clients/>
       <About/>
      <ContactUs/>
+     
       
       <Footer/>
+      
+      
     </>
   )
 }
 
 export default App
+
+

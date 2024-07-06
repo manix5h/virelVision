@@ -17,28 +17,25 @@ export function Services() {
     });
   },[])
   return (
-    <div  id="services" className="h-fit">
+    <div  id="services" className="h-fit pt-9 md:pt-10">
       <div data-aos="fade-right"  className="flex justify-center pt-10">
         <h1 className="text-4xl p-5">OUR SERVICES</h1>
       </div>
 
       <div className="flex justify-center ">
         <div className=" grid grid-cols-1 md:space-x-5 space-y-3 md:grid-cols-3 ">
-          <ServiceCard
-            heading={data.s1.heading}
-            paragraph={data.s1.paragraph}
-            image={data.s1.image}
-          />
-          <ServiceCard
-            heading={data.s2.heading}
-            paragraph={data.s2.paragraph}
-            image={data.s2.image}
-          />
-          <ServiceCard
-            heading={data.s3.heading}
-            paragraph={data.s3.paragraph}
-            image={data.s3.image}
-          />
+         {
+          data.map((s)=>(
+            <div>
+            <ServiceCard
+              heading={s.heading}
+              paragraph={s.paragraph}
+              image={s.image}
+            />
+            </div>
+           ))
+         }
+          
         </div>
       </div>
     </div>

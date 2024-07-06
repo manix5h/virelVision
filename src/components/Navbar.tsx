@@ -32,7 +32,7 @@ export function Navbar() {
       <div className=
       {`md:flex md:gap-8 md:pt-7 
       
-      absolute bg-white md:static md:items-center lg:justify-center top-28 p-4 space-y-6 md:space-y-0 w-full md:w-auto lg:pr-60 pl-5 transition-all duration-500 ease-in md:pl-0  gap-7 md 
+      absolute bg-white  md:static md:items-center lg:justify-center top-28 p-4 space-y-6 md:space-y-0 w-full md:w-auto lg:pr-60 pl-5 transition-all duration-500 ease-in md:pl-0  gap-7 md 
       ${open?"top-20 opacity-100":"top-[-490px]"}  `}>
         <div className="text-xl">
           <Link

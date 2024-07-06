@@ -14,6 +14,7 @@
     "@nadfri/react-scroll-progress-bar": "^0.2.3",
     "aos": "^3.0.0-beta.6",
     "axios": "^1.7.2",
+    "clsx": "^2.1.1",
     "framer-motion": "^11.2.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -21,6 +22,9 @@
     "react-router-dom": "^6.23.1",
     "react-scroll": "^1.9.0",
     "react-scroll-progress-bar": "^2.0.3",
+    "react-slick": "^0.30.2",
+    "react-starfield": "^1.0.3",
+    "tailwind-merge": "^2.3.0",
     "ts-dotenv": "^0.9.1"
   },
   "devDependencies": {
@@ -29,6 +33,7 @@
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.2.22",
     "@types/react-scroll": "^1.8.10",
+    "@types/react-slick": "^0.23.13",
     "@typescript-eslint/eslint-plugin": "^7.2.0",
     "@typescript-eslint/parser": "^7.2.0",
     "@vitejs/plugin-react": "^4.2.1",

@@ -68,10 +68,12 @@ export function Footer(){
         <p className="mt-8 text-base leading-6 text-center text-gray-400">
             © 2024 virelvisson, Inc. All rights reserved.
         </p>
-        <div className="flex space-x-1 justify-center ">
+        <a href="https://manishsahu-portfolioo.netlify.app/">
+        <div className="flex space-x-1 justify-center pt-2">
         <FaCode className="mt-1 text-gray-500 w-9" />
         <span className="text-gray-500">by Manish Sahu</span>
         </div>
+        </a>
     </div>
 </section>
         </div>
